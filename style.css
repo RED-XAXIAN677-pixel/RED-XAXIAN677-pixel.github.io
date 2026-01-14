@@ -60,3 +60,30 @@ ul#reviewsList li {
   margin-bottom: 10px;
   border-radius: 5px;
 }
+/* =======================
+   Gaming Ads Section
+   ======================= */
+.ads {
+  text-align: center;
+  padding: 40px;
+}
+
+.ad-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ad-container img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.ad-container img:hover {
+  transform: scale(1.05);
+}
