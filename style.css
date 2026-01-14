@@ -87,3 +87,18 @@ ul#reviewsList li {
 .ad-container img:hover {
   transform: scale(1.05);
 }
+/* =======================
+   Video Advertisement
+   ======================= */
+.video-ad {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.video-ad video {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
