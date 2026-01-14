@@ -2,47 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Veera | Building My Future</title>
+  <title>Veera | My Personal Site</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Hi, I'm Veera</h1>
-    <p>Student | Future Engineer | Building Skills That Matter</p>
+    <h1>Welcome to My Website</h1>
+    <p>Learning, Building, Improving Every Day</p>
   </section>
 
+  <!-- REVIEW SYSTEM -->
   <section>
-    <h2>About Me</h2>
-    <p>
-      I am a student from Andhra Pradesh preparing for engineering entrances.
-      My goal is to build high-value skills, master my mindset, and create wealth early.
-    </p>
-  </section>
+    <h2>Leave a Review</h2>
+    <form id="reviewForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <textarea id="message" placeholder="Your review" required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
 
-  <section>
-    <h2>My Goals</h2>
-    <ul>
-      <li>Get into a good engineering college</li>
-      <li>Master focus, discipline, and communication</li>
-      <li>Learn AI, marketing, and money systems</li>
+    <h3>Reviews</h3>
+    <ul id="reviewsList">
+      <!-- Reviews will appear here -->
     </ul>
   </section>
 
-  <section>
-    <h2>Skills I'm Building</h2>
-    <ul>
-      <li>Programming & AI tools</li>
-      <li>Communication & influence</li>
-      <li>Deep focus & systems thinking</li>
-    </ul>
-  </section>
+  <!-- JS to handle reviews -->
+  <script>
+    const form = document.getElementById('reviewForm');
+    const reviewsList = document.getElementById('reviewsList');
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: coming soon</p>
-    <p>YouTube / Projects: coming soon</p>
-  </section>
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const message = document.getElementById('message').value;
+
+      if(name && message){
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${name}:</strong> ${message}`;
+        reviewsList.prepend(li); // newest first
+        form.reset();
+      }
+    });
+  </script>
 
 </body>
 </html>
+
